@@ -119,11 +119,12 @@ CREATE PROCEDURE MemorizzaNuovoImpiegato
 @CodiceFiscale NVARCHAR(16),
 @Eta INT,
 @RedditoMensile MONEY,
-@DetrazioneFiscale BIT
+@DetrazioneFiscale BIT,
+@IdImpiego INT
 AS
 BEGIN
-	INSERT INTO IMPIEGATO (COGNOME, NOME, CODICEFISCALE, ETA, REDDITOMENSILE, DETRAZIONEFISCALE)
-	VALUES (@Cognome, @Nome, @CodiceFiscale, @Eta, @RedditoMensile, @DetrazioneFiscale)
+	INSERT INTO IMPIEGATO (COGNOME, NOME, CODICEFISCALE, ETA, REDDITOMENSILE, DETRAZIONEFISCALE, IMPIEGO_ID)
+	VALUES (@Cognome, @Nome, @CodiceFiscale, @Eta, @RedditoMensile, @DetrazioneFiscale, @IdImpiego)
 END
 GO
 
